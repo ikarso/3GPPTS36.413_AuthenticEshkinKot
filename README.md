@@ -32,7 +32,8 @@ $ /path/to/asn1c -fcompound-names -gen-PER -pdu=InitiatingMessage ../ASN/*.asn
 $ make -f Makefile.am.sample  
 $ ./progname -iaper ../data/InitiatingMessage  
 
-```xml<InitiatingMessage>
+```xml
+<InitiatingMessage>
     <procedureCode>11</procedureCode>
     <criticality><ignore/></criticality>
     <value>
@@ -50,7 +51,8 @@ $ make -f Makefile.am.sample clean
 $ make -f Makefile.am.sample  
 $ ./progname -iaper ../data/DownlinkNASTransport  
 
-```xml<DownlinkNASTransport>
+```xml
+<DownlinkNASTransport>
     <protocolIEs>
         <ProtocolIE-Field>
             <id>0</id>
