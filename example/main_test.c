@@ -26,7 +26,7 @@
 
 #define PARSE_CMD_(msg_type, DEF_Type, cont_type, field_type, msg_value)  \
   msg_type *msg = 0; \
-  if (!ANY_to_type(msg_value, &DEF_Type, (void **)&msg))  \
+  if (!ANY_to_type_aper(msg_value, &DEF_Type, (void **)&msg))  \
   { \
     asn_fprint(stdout, &DEF_Type, msg);  \
     cont_type * container = &(msg->protocolIEs);  \
@@ -45,7 +45,7 @@
 void processTAI(ANY_t * value)
 {
   TAI_t *tai = 0;
-  if (!ANY_to_type(value, &asn_DEF_TAI, (void **)&tai))
+  if (!ANY_to_type_aper(value, &asn_DEF_TAI, (void **)&tai))
   {
     //printf("tai.pLMNidentity = %d\n", tai->pLMNidentity);
     //printf("tai.tAC = %d\n", tai->tAC);
@@ -56,7 +56,7 @@ void processTAI(ANY_t * value)
 void processCause(ANY_t * value)
 {
   Cause_t *cause = 0;
-  if (!ANY_to_type(value, &asn_DEF_Cause, (void **)&cause))
+  if (!ANY_to_type_aper(value, &asn_DEF_Cause, (void **)&cause))
   {
     printf("cause = %ld\n", cause->choice.radioNetwork);
     //asn_fprint(stdout, &asn_DEF_Cause, cause);
@@ -66,7 +66,7 @@ void processCause(ANY_t * value)
 void processCNDomain(ANY_t * value)
 {
   CNDomain_t *cndomain = 0;
-  if (!ANY_to_type(value, &asn_DEF_CNDomain, (void **)&cndomain))
+  if (!ANY_to_type_aper(value, &asn_DEF_CNDomain, (void **)&cndomain))
   {
     printf("cndomain = %ld\n", *cndomain);
     //asn_fprint(stdout, &asn_DEF_Cause, cause);
@@ -76,7 +76,7 @@ void processCNDomain(ANY_t * value)
 void processUEIdentityIndexValue(ANY_t * value)
 {
   UEIdentityIndexValue_t *ueidindex = 0;
-  if (!ANY_to_type(value, &asn_DEF_UEIdentityIndexValue, (void **)&ueidindex))
+  if (!ANY_to_type_aper(value, &asn_DEF_UEIdentityIndexValue, (void **)&ueidindex))
   {
     //printf("ueidindex = %d\n", ueidindex->buf);
     asn_fprint(stdout, &asn_DEF_UEIdentityIndexValue, ueidindex);
@@ -86,7 +86,7 @@ void processUEIdentityIndexValue(ANY_t * value)
 void process_id_MME_UE(ANY_t * value)
 {
   MME_UE_S1AP_ID_t *id_MME_UE = 0;
-  if (!ANY_to_type(value, &asn_DEF_MME_UE_S1AP_ID, (void **)&id_MME_UE))
+  if (!ANY_to_type_aper(value, &asn_DEF_MME_UE_S1AP_ID, (void **)&id_MME_UE))
   {
     printf("id_MME_UE = %ld\n", *id_MME_UE);
     //asn_fprint(stdout, &asn_DEF_Cause, cause);
@@ -96,7 +96,7 @@ void process_id_MME_UE(ANY_t * value)
 void process_id_eNB_UE(ANY_t * value)
 {
   ENB_UE_S1AP_ID_t *id_eNB_UE = 0;
-  if (!ANY_to_type(value, &asn_DEF_ENB_UE_S1AP_ID, (void **)&id_eNB_UE))
+  if (!ANY_to_type_aper(value, &asn_DEF_ENB_UE_S1AP_ID, (void **)&id_eNB_UE))
   {
     printf("id_eNB_UE = %ld\n", *id_eNB_UE);
     //asn_fprint(stdout, &asn_DEF_Cause, cause);
@@ -106,7 +106,7 @@ void process_id_eNB_UE(ANY_t * value)
 void processEutranCgi(ANY_t * value)
 {
   EUTRAN_CGI_t *eutran_cgi = 0;
-  if (!ANY_to_type(value, &asn_DEF_EUTRAN_CGI, (void **)&eutran_cgi))
+  if (!ANY_to_type_aper(value, &asn_DEF_EUTRAN_CGI, (void **)&eutran_cgi))
   {
     //printf("eutran_cgi = %d\n", *eutran_cgi);
     asn_fprint(stdout, &asn_DEF_EUTRAN_CGI, eutran_cgi);
@@ -116,7 +116,7 @@ void processEutranCgi(ANY_t * value)
 void processEstablishmentCause(ANY_t * value)
 {
   RRC_Establishment_Cause_t *establishment_cause = 0;
-  if (!ANY_to_type(value, &asn_DEF_RRC_Establishment_Cause, (void **)&establishment_cause))
+  if (!ANY_to_type_aper(value, &asn_DEF_RRC_Establishment_Cause, (void **)&establishment_cause))
   {
     printf("establishment_cause = %ld\n", *establishment_cause);
     //asn_fprint(stdout, &asn_DEF_RRC_Establishment_Cause, establishment_cause);
