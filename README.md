@@ -9,18 +9,15 @@ Just clone and build
 
 Clone this repo
 
-$ cd repo/example
-$ /path/to/asn1c -fcompound-names -gen-PER ../ASN/*.asn 
+$ cd repo/example  
+$ /path/to/asn1c -fcompound-names -gen-PER ../ASN/*.asn   
 
-Edit Makefile.sample
+Edit Makefile.sample  
+remove ASN_CONVERTER_SOURCES+=converter-sample.c  
+add ASN_CONVERTER_SOURCES+=main_test.c  
 
-- ASN_CONVERTER_SOURCES+=converter-sample.c  
-
-+ ASN_CONVERTER_SOURCES+=main_test.c  
-
-$ make -f Makefile.am.sample
-$ ./progname ../data/test_data.org
-
+$ make -f Makefile.am.sample  
+$ ./progname ../data/test_data.org  
 
 # PR125
 
