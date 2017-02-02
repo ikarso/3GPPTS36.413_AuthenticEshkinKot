@@ -21,7 +21,7 @@ add ASN_CONVERTER_SOURCES+=main_test.c
 $ make -f Makefile.am.sample  
 $ ./progname ../data/test_data.org  
 
-# PR125 with main_test.c
+# PR125 with main_test_125.c
 
 Clone PR125 and merge with PR99
 
